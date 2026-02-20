@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ROGATIANA | Portfolio</title>
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/profil.jpg">
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="ROGATIANA | Portfolio">
+    <meta property="og:description" content="Étudiant en informatique passionné par le développement web">
+    <meta property="og:image" content="img/profil.jpg">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@rogatiana05">
+    <meta name="twitter:title" content="ROGATIANA | Portfolio">
+    <meta name="twitter:description" content="Étudiant en informatique passionné créant des expériences digitales.">
+    <meta name="twitter:image" content="img/profil.jpg">
+    
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+    
+    <!-- Navigation améliorée -->
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="container nav-container">
+            <a href="/" class="logo" aria-label="ROGATIANA - Accueil">
+                <span class="logo-icon" aria-hidden="true">👨‍💻</span>
+                <span class="logo-text">ROGATIANA<span class="logo-dot">.</span></span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu principal" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            <h5>
+            <ul class="nav-menu" id="primary-navigation" role="menubar">
+                <li role="none">
+                    <a href="#accueil" class="nav-link" role="menuitem">
+                        <i class="fas fa-home fa-bounce" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#apropos" class="nav-link" role="menuitem">
+                        <i class="fas fa-user fa-flip" aria-hidden="true"></i>
+                        <span>À propos</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#competences" class="nav-link" role="menuitem">
+                        <i class="fas fa-gear fa-spin" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#langues-interets" class="nav-link" role="menuitem">
+                        <i class="fas fa-heart fa-beat-fade" aria-hidden="true"></i>
+                        <span>Intérêts</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#projets" class="nav-link" role="menuitem">
+                        <i class="fas fa-code fa-flip" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#contact" class="nav-link" role="menuitem">
+                        <i class="fas fa-envelope fa-shake" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+            </h5>
+            
+            <!-- Theme switcher -->
+            <button class="theme-switcher" aria-label="Changer le thème (clair/sombre)">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <i class="fas fa-sun" aria-hidden="true"></i>
+            </button>
+        </div>
+        
+        <!-- Progress bar -->
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progression de lecture"></div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Section Hero -->
+        <section id="accueil" class="hero" aria-label="Présentation">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge">Étudiant en Informatique</span>
+                        <div class="badge-dot"></div>
+                        <span class="badge-text">Passionné par le développement web</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">Riantsoa</span>
+                        <span class="title-line"><span class="title-highlight">Rogatiana</span></span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Je suis un étudiant passionné par l'informatique et le développement web, 
+                        actuellement en première année de licence à l'<strong>EMIT Fianarantsoa</strong>. 
+                        Curieux et rigoureux, je cherche constamment à apprendre et maîtriser les nouvelles technologies.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projets" class="btn btn-primary">
+                            <span>Voir mes projets</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Me contacter</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="1" aria-label="1 année d'études">1</div>
+                            <div class="stat-label">Années d'étude</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="3" aria-label="3 projets réalisés">3</div>
+                            <div class="stat-label">Projets réalisés</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="3" aria-label="3 langues parlées">3</div>
+                            <div class="stat-label">Langues parlées</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <picture>
+                                    <source srcset="img/profil.jpg" type="image/webp">
+                                    <source srcset="img/profil.jpg" type="image/jpeg">
+                                    <img 
+                                        src="img/profil.jpg" 
+                                        alt="MAMPIHAVANA-MAMISOA Fonohery Nérée Riantsoa Rogatiana, étudiant en informatique" 
+                                        width="400"
+                                        height="400"
+                                        loading="eager"
+                                        fetchpriority="high"
+                                    >
+                                </picture>
+                                <div class="image-glow" aria-hidden="true"></div>
+                            </div>
+                            <div class="profile-tech" aria-hidden="true">
+                                <span class="tech-bubble" style="--delay: 0"><i class="fab fa-html5"></i></span>
+                                <span class="tech-bubble" style="--delay: 1"><i class="fab fa-css3-alt"></i></span>
+                                <span class="tech-bubble" style="--delay: 2"><i class="fab fa-js"></i></span>
+                                <span class="tech-bubble" style="--delay: 3"><i class="fab fa-python"></i></span>
+                            </div>
+                        </div>
+                        <div class="floating-elements" aria-hidden="true">
+                            <div class="floating-card" style="--i: 1">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>L1 DA2I</span>
+                            </div>
+                            <div class="floating-card" style="--i: 2">
+                                <i class="fas fa-code"></i>
+                                <span>Développeur</span>
+                            </div>
+                            <div class="floating-card" style="--i: 3">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Passionné</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <a href="#apropos" class="scroll-indicator" aria-label="Défiler vers la section À propos">
+                <div class="mouse" aria-hidden="true">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Défiler</span>
+            </a>
+        </section>
+
+        <!-- Section À propos (avec Formation intégrée) -->
+        <section id="apropos" class="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Qui suis-je ?</span>
+                    <h2 id="about-heading" class="section-title">À propos de moi</h2>
+                    <p class="section-description">
+                        Étudiant passionné par l'informatique, je combine curiosité naturelle et rigueur 
+                        pour créer des solutions web innovantes.
+                    </p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-graduation-cap fa-bounce"></i>
+                        </div>
+                        <h3>Étudiant</h3>
+                        <p>L1 Développement d'Applications Internet et Intranet à l'EMIT Fianarantsoa.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-rocket fa-beat"></i>
+                        </div>
+                        <h3>Passionné</h3>
+                        <p>Constamment en apprentissage des nouvelles technologies web.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-award fa-flip"></i>
+                        </div>
+                        <h3>Double Baccalauréat</h3>
+                        <p>Titulaire des séries A2 (Lettres) et D (Sciences).</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-infinity fa-beat"></i>
+                        </div>
+                        <h3>Polyvalent</h3>
+                        <p>Capacité d'adaptation et approche multidisciplinaire.</p>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Mon parcours</h3>
+                        <p>
+                            Je suis un étudiant passionné par l'informatique et le développement web, 
+                            actuellement en première année de licence à l'EMIT Fianarantsoa. 
+                            Ma curiosité naturelle et ma rigueur me poussent à constamment apprendre 
+                            et maîtriser les nouvelles technologies.
+                        </p>
+                        <p>
+                            Titulaire de deux baccalauréats (série A2 et D), j'ai développé une capacité 
+                            d'adaptation et une polyvalence qui me permettent d'aborder les problèmes 
+                            sous différents angles. Je suis à la recherche d'opportunités pour mettre 
+                            en pratique mes compétences et contribuer à des projets innovants.
+                        </p>
+                        
+                        <!-- Timeline de formation intégrée dans À propos -->
+                        <div class="education-timeline">
+                            <h3><i class="fas fa-graduation-cap fa-bounce" style="margin-right: var(--space-sm);"></i> Formation</h3>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2026 - Présent</div>
+                                <div class="timeline-content">
+                                    <h4>L1 Informatique - DA2I</h4>
+                                    <p>EMIT Fianarantsoa - Développement d'Applications Internet et Intranet</p>
+                                    <span class="education-badge">En cours</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024</div>
+                                <div class="timeline-content">
+                                    <h4>Baccalauréat série D</h4>
+                                    <p>Lycée Saint Joseph - Ambalavao-Tsienimparihy</p>
+                                    <p><small>Mention : Passable</small></p>
+                                    <span class="education-badge">Obtenu</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023</div>
+                                <div class="timeline-content">
+                                    <h4>Baccalauréat série A2</h4>
+                                    <p>Lycée Juvénat Sacré-Cœur (LJSCA) - Ambatolampy</p>
+                                    <p><small>Mention : Passable</small></p>
+                                    <span class="education-badge">Obtenu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-images">
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <img 
+                                    src="img/EMIT.jpg" 
+                                    alt="Bâtiment de l'EMIT Fianarantsoa - École supérieure en informatique"
+                                    loading="lazy"
+                                >
+                                <div class="image-caption">EMIT Fianarantsoa</div>
+                            </div>
+                        </div>
+
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <img 
+                                    src="img/UF.jpg" 
+                                    alt="Université de Fianarantsoa - Campus universitaire"
+                                    loading="lazy"
+                                >
+                                <div class="image-caption">Université de Fianarantsoa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences (inchangée) -->
+        <section id="competences" class="skills" aria-labelledby="skills-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Mes expertises</span>
+                    <h2 id="skills-heading" class="section-title">Compétences techniques</h2>
+                    <p class="section-description">
+                        Les technologies que je maîtrise et que j'apprends actuellement.
+                    </p>
+                </div>
+                
+                <div class="skills-container">
+                    <!-- Frontend -->
+                    <div class="skills-category">
+                        <div class="category-header">
+                            <i class="fas fa-paint-brush category-icon fa-beat"></i>
+                            <h3>Frontend</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5</span>
+                                    <span class="skill-level">Avancé</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS3</span>
+                                    <span class="skill-level">Intermédiaire</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-level">Débutant</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="40"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skills-category">
+                        <div class="category-header">
+                            <i class="fas fa-server category-icon fa-bounce"></i>
+                            <h3>Backend & Programmation</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">Débutant</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="25"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Algorithmique</span>
+                                    <span class="skill-level">Intermédiaire</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="50"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Bases de données</span>
+                                    <span class="skill-level">Débutant</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="30"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outils -->
+                    <div class="skills-category">
+                        <div class="category-header">
+                            <i class="fas fa-tools category-icon fa-flip"></i>
+                            <h3>Outils</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git / GitHub</span>
+                                    <span class="skill-level">Débutant</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="30"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code</span>
+                                    <span class="skill-level">Intermédiaire</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="60"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Figma</span>
+                                    <span class="skill-level">Débutant</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="20"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills visualization -->
+                <div class="skills-visual">
+                    <div class="visual-item">
+                        <div class="radial-progress" data-value="85">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle class="radial-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="radial-fg" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <span class="radial-value">85%</span>
+                            <span class="radial-label">HTML5</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="radial-progress" data-value="70">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle class="radial-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="radial-fg" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <span class="radial-value">70%</span>
+                            <span class="radial-label">CSS3</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="radial-progress" data-value="40">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle class="radial-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="radial-fg" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <span class="radial-value">40%</span>
+                            <span class="radial-label">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="radial-progress" data-value="25">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle class="radial-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="radial-fg" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <span class="radial-value">25%</span>
+                            <span class="radial-label">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Langues et Centres d'intérêt combinée -->
+        <section id="langues-interets" class="languages-interests" aria-labelledby="langues-interets-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Langues & Passions</span>
+                    <h2 id="langues-interets-heading" class="section-title">Compétences linguistiques et centres d'intérêt</h2>
+                    <p class="section-description">
+                        Les langues que je parle et ce qui me passionne au quotidien.
+                    </p>
+                </div>
+                
+                <!-- Langues -->
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-flag">🇲🇬</div>
+                        <div class="language-name">Malgache</div>
+                        <span class="language-level maternel">Maternelle</span>
+                        <div class="language-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-card">
+                        <div class="language-flag">🇫🇷</div>
+                        <div class="language-name">Français</div>
+                        <span class="language-level intermediaire">Intermédiaire</span>
+                        <div class="language-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-card">
+                        <div class="language-flag">🇩🇪</div>
+                        <div class="language-name">Deutsch</div>
+                        <span class="language-level debutant">Débutant</span>
+                        <div class="language-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Centres d'intérêt -->
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-code fa-flip"></i>
+                        </div>
+                        <span>Programmation</span>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-gamepad fa-beat"></i>
+                        </div>
+                        <span>Jeux vidéo</span>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-music fa-spin"></i>
+                        </div>
+                        <span>Musique</span>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chess fa-flip"></i>
+                        </div>
+                        <span>Échecs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projets" class="projects" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2 id="projects-heading" class="section-title">Mes projets</h2>
+                    <p class="section-description">
+                        Découvrez une sélection de mes réalisations.
+                    </p>
+                </div>
+                
+                <!-- Grille de projets -->
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <article class="project-card"role="article">
+                        <div class="project-image">
+                            <img 
+                                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Site vitrine pour association"
+                                loading="lazy"
+                            >
+                            <div class="project-overlay">
+                                <a href="https://rogatiana.github.io/DA2II_L1_Groupe_6/" class="project-link" aria-label="Voir les détails du projet">
+                                    <i class="fas fa-external-link-alt fa-bounce"></i>
+                                </a>
+                                <a href="https://github.com/Rogatiana/DA2II_L1_Groupe_6/" class="project-github" aria-label="Code source sur GitHub">
+                                    <i class="fab fa-github fa-bounce"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Site de bibliothèque Uniersitaire</h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <p class="project-description">
+                                Site web de bibliothèque réalisé en HTML, CSS et JavaScript. Le site permet de présenter la bibliothèque, ses horaires, son règlement, les catégories de livres disponibles, un espace livre, et une page de contact.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 -->
+                    <article class="project-card" data-category="frontend" role="article">
+                        <div class="project-image">
+                            <img 
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Application Todo"
+                                loading="lazy"
+                            >
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" aria-label="Voir les détails du projet">
+                                    <i class="fas fa-external-link-alt fa-bounce"></i>
+                                </a>
+                                <a href="https://github.com/ROGATIANA/BACC" class="project-github" aria-label="Code source sur GitHub">
+                                    <i class="fab fa-github fa-bounce"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Site BACCalauréat</h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <p class="project-description">
+                                Site web de Baccalauréat scientifique, 
+                                stockage local et fonctionnalités de filtrage.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 -->
+                    <article class="project-card" data-category="frontend" role="article">
+                        <div class="project-image">
+                            <img 
+                                src="img/portfolio.jpg" 
+                                alt="portfolio 2026"
+                                loading="lazy"
+                            >
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" aria-label="Voir les détails du projet">
+                                    <i class="fas fa-external-link-alt fa-bounce"></i>
+                                </a>
+                                <a href="https://github.com/ROGATIANA/Portfolio_2026" class="project-github" aria-label="Code source sur GitHub">
+                                    <i class="fab fa-github fa-bounce"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Portfolio 2026</h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <p class="project-description">
+                                Site web de portofolio avec responsive design, 
+                                de navigation fluide et d'animations par CSS & JS.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Contact</span>
+                    <h2 id="contact-heading" class="section-title">Restons en contact</h2>
+                    <p class="section-description">
+                        Je suis toujours intéressé par de nouvelles opportunités et collaborations. N'hésitez pas à me contacter !
+                    </p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope fa-shake"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:riantsoa.rogatiana@outlook.com">riantsoa.rogatiana@outlook.com</a>
+                                <p>Réponse sous 4h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone fa-shake"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Téléphone</h4>
+                                <a href="tel:+261342707791">+261 34 27 077 91</a>
+                                <p>Lun-Ven, 9h-18h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt fa-flip"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Adresse</h4>
+                                <address>
+                                    Fianarantsoa, Madagascar
+                                </address>
+                                <p>Ouvert au travail à distance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/rogatiana" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.github.com/ROGATIANA" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.x.com/Rogatiana05" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="https://www.facebook.com/Rogatiana" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    placeholder="Votre nom"
+                                    aria-required="true"
+                                >
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    placeholder="votre@email.com"
+                                    aria-required="true"
+                                >
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject" 
+                                required 
+                                placeholder="Sujet de votre message"
+                                aria-required="true"
+                            >
+                            <div class="error-message" id="subject-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="5" 
+                                required 
+                                placeholder="Votre message..."
+                                aria-required="true"
+                            ></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-loader" aria-hidden="true"></span>
+                            </button>
+                            <p class="form-note">
+                                * Champs obligatoires
+                            </p>
+                        </div>
+                        
+                        <div class="form-success" id="success-message" role="alert" aria-live="polite">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Message envoyé !</h4>
+                                <p>Je vous répondrai dans les plus brefs délais.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Carte -->
+        <div class="map-container" data-aos="fade-up">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124423.34568238726!2d47.05415619453123!3d-21.45460539999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7c21f8b7b5c9b%3A0x3b5a0b1c4f3b5c9b!2sFianarantsoa%2C%20Madagascar!5e0!3m2!1sfr!2sfr!4v1634567890123!5m2!1sfr!2sfr" 
+            allowfullscreen="" 
+            loading="lazy"
+            title="Localisation à Fianarantsoa">
+          </iframe>
+        </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon" aria-hidden="true">👨‍💻</span>
+                        <span class="logo-text">ROGATIANA<span class="logo-dot">.</span></span>
+                    </a>
+                    <p class="footer-description">
+                        Étudiant en informatique passionné par la création 
+                        d'expériences web.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#competences">Compétences</a></li>
+                        <li><a href="#langues-interets">Langues & Intérêts</a></li>
+                        <li><a href="#projets">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Développement Web</a></li>
+                        <li><a href="#">Intégration HTML/CSS</a></li>
+                        <li><a href="#">Sites vitrines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Recevez mes actualités.</p>
+                    <form class="newsletter-form">
+                        <label for="newsletter-email" class="sr-only">Email pour newsletter</label>
+                        <input type="email" id="newsletter-email" placeholder="Votre email" aria-label="Adresse email pour la newsletter">
+                        <button type="submit" aria-label="S'abonner à la newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> MAMPIHAVANA-MAMISOA Fonohery Nérée Riantsoa Rogatiana. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#" aria-label="Mentions légales">Mentions légales</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="#" aria-label="Politique de confidentialité">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(error => {
+                    console.warn('Service Worker registration failed:', error);
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
