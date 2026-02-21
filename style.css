@@ -646,6 +646,7 @@ a:hover {
 .floating-card {
     background: var(--bg-primary);
     padding: var(--space-md);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     display: flex;
