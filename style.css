@@ -886,6 +886,12 @@ a:hover {
     margin-bottom: var(--space-md);
 }
 
+.language-flag img {
+    width: 85px;
+    border: 1px solid #60fad9;
+    border-radius: 5px;
+}
+
 .language-name {
     font-size: 1.3rem;
     font-weight: 600;
