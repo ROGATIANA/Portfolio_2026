@@ -811,6 +811,7 @@ a:hover {
 }
 .image-frame {
     position: relative;
+    border: 1px solid var(--border);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
@@ -2531,7 +2532,7 @@ a:hover {
     .about-image {
         grid-column: 1 !important;
         max-width: 400px;
-        margin: 0 auto;
+        margin: 0 auto var(--space-3xl);
     }
 }
 
