@@ -1,8 +1,6 @@
-// Portfolio Professionnel - Version Avancée
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
-    // ===== CONFIGURATION =====
     const CONFIG = {
         animations: {
             enable: true,
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ===== STATE MANAGEMENT =====
     const STATE = {
         theme: localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
         scrollPosition: 0,
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formSubmitting: false
     };
     
-    // ===== CORE UTILITIES =====
     const Utils = {
         debounce: function(func, wait) {
             let timeout;
@@ -69,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ===== THEME MANAGER =====
     class ThemeManager {
         constructor() {
             this.themeSwitcher = document.querySelector('.theme-switcher');
@@ -86,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.toggle('dark-mode', theme === 'dark');
             localStorage.setItem('theme', theme);
             
-            // Update meta theme-color
             const themeColor = theme === 'dark' ? '#111827' : '#ffffff';
             const metaTheme = document.querySelector('meta[name="theme-color"]');
             if (metaTheme) {
@@ -98,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const newTheme = STATE.theme === 'light' ? 'dark' : 'light';
             this.setTheme(newTheme);
             
-            // Dispatch custom event
             document.dispatchEvent(new CustomEvent('themeChange', {
                 detail: { theme: newTheme }
             }));
@@ -109,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.themeSwitcher.addEventListener('click', () => this.toggleTheme());
             }
             
-            // Listen for system preference changes
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
             mediaQuery.addEventListener('change', (e) => {
                 if (!localStorage.getItem('theme')) {
@@ -119,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== NAVIGATION MANAGER =====
     class NavigationManager {
         constructor() {
             this.navbar = document.querySelector('.navbar');
@@ -139,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         bindEvents() {
-            // Menu toggle
             if (this.menuToggle) {
                 this.menuToggle.addEventListener('click', () => this.toggleMenu());
                 this.menuToggle.addEventListener('keydown', (e) => {
@@ -150,17 +140,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Close menu on link click
             this.navLinks.forEach(link => {
                 link.addEventListener('click', () => this.closeMenu());
             });
             
-            // Close menu on ESC
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') this.closeMenu();
             });
             
-            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -174,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // Update active link on scroll
             window.addEventListener('scroll', Utils.throttle(() => {
                 this.setActiveNavLink();
                 this.updateProgressBar();
@@ -219,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (this.currentSection !== sectionId) {
                         this.currentSection = sectionId;
                         
-                        // Update nav links
                         this.navLinks.forEach(link => {
                             link.classList.remove('active');
                             if (link.getAttribute('href') === `#${sectionId}`) {
@@ -227,7 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                         });
                         
-                        // Dispatch custom event
                         document.dispatchEvent(new CustomEvent('sectionChange', {
                             detail: { sectionId }
                         }));
@@ -265,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== ANIMATION MANAGER =====
     class AnimationManager {
         constructor() {
             this.animatedElements = new Set();
@@ -299,7 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, this.observerOptions);
             
-            // Observe elements with data-animate attribute
             document.querySelectorAll('[data-animate]').forEach(el => {
                 this.observer.observe(el);
             });
@@ -309,7 +291,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const animation = element.dataset.animate;
             element.classList.add('animate__animated', `animate__${animation}`);
             
-            // Remove animation class after completion
             element.addEventListener('animationend', () => {
                 element.classList.remove('animate__animated', `animate__${animation}`);
             });
@@ -325,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             window.addEventListener('scroll', Utils.throttle(animateOnScroll, 100));
-            animateOnScroll(); // Initial check
+            animateOnScroll();
         }
         
         initCounters() {
@@ -443,7 +424,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== PROJECTS MANAGER =====
     class ProjectsManager {
         constructor() {
             this.filterButtons = document.querySelectorAll('.filter-btn');
@@ -460,7 +440,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         bindEvents() {
-            // Filter buttons
             this.filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const filter = button.dataset.filter;
@@ -469,7 +448,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // Load more
             if (this.loadMoreBtn) {
                 this.loadMoreBtn.addEventListener('click', () => this.loadMoreProjects());
             }
@@ -492,7 +470,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 card.style.display = shouldShow ? 'block' : 'none';
                 
-                // Animate appearance
                 if (shouldShow) {
                     requestAnimationFrame(() => {
                         card.style.opacity = '0';
@@ -509,7 +486,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         loadMoreProjects() {
-            // Simulate loading more projects
             this.loadMoreBtn.disabled = true;
             this.loadMoreBtn.innerHTML = '<span>Chargement...</span><i class="fas fa-spinner fa-spin"></i>';
             
@@ -542,7 +518,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== CONTACT FORM MANAGER =====
     class ContactFormManager {
         constructor() {
             this.form = document.getElementById('contact-form');
@@ -560,7 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
         bindEvents() {
             this.form.addEventListener('submit', (e) => this.handleSubmit(e));
             
-            // Real-time validation
             this.form.querySelectorAll('input, textarea').forEach(input => {
                 input.addEventListener('input', () => this.validateField(input));
                 input.addEventListener('blur', () => this.validateField(input));
@@ -568,7 +542,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         initValidation() {
-            // Add custom validation messages
             this.form.querySelectorAll('[required]').forEach(input => {
                 input.addEventListener('invalid', (e) => {
                     e.preventDefault();
@@ -651,7 +624,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = new FormData(this.form);
                 const data = Object.fromEntries(formData);
                 
-                // Simulate API call
                 await this.submitForm(data);
                 
                 this.showSuccess();
@@ -668,11 +640,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         async submitForm(data) {
-            // In a real application, replace with actual API call
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    // Simulate network delay
-                    if (Math.random() > 0.1) { // 90% success rate for demo
+                    if (Math.random() > 0.1) {
                         resolve({ success: true });
                     } else {
                         reject(new Error('Network error'));
@@ -700,7 +670,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.successMessage) {
                 this.successMessage.style.display = 'flex';
                 
-                // Hide after 5 seconds
                 setTimeout(() => {
                     this.successMessage.style.display = 'none';
                 }, 5000);
@@ -730,7 +699,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== PERFORMANCE MANAGER =====
     class PerformanceManager {
         constructor() {
             this.init();
@@ -749,14 +717,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             
             if ('loading' in HTMLImageElement.prototype) {
-                // Native lazy loading is supported
                 lazyImages.forEach(img => {
                     if (img.dataset.src) {
                         img.src = img.dataset.src;
                     }
                 });
             } else {
-                // Fallback to Intersection Observer
                 const imageObserver = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -775,7 +741,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         initPreloading() {
-            // Preload critical resources
             const preloadLinks = document.querySelectorAll('link[rel="preload"]');
             preloadLinks.forEach(link => {
                 const as = link.getAttribute('as');
@@ -801,7 +766,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         monitorPerformance() {
-            // Monitor CLS (Cumulative Layout Shift)
             let clsValue = 0;
             
             try {
@@ -815,7 +779,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 observer.observe({ type: 'layout-shift', buffered: true });
                 
-                // Report CLS to analytics (simulated)
                 window.addEventListener('beforeunload', () => {
                     if (clsValue > 0.1) {
                         console.warn('High CLS detected:', clsValue);
@@ -827,7 +790,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== UI ENHANCEMENTS =====
     class UIEnhancements {
         constructor() {
             this.backToTop = document.querySelector('.back-to-top');
@@ -870,7 +832,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         initCustomCursor() {
             if (!this.customCursor || window.matchMedia('(pointer: coarse)').matches) {
-                return; // Don't use custom cursor on touch devices
+                return;
             }
             
             document.addEventListener('mousemove', (e) => {
@@ -878,7 +840,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.customCursor.style.top = e.clientY + 'px';
             });
             
-            // Add hover effects
             const hoverElements = document.querySelectorAll('a, button, [data-cursor="hover"]');
             hoverElements.forEach(el => {
                 el.addEventListener('mouseenter', () => {
@@ -889,7 +850,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // Hide cursor when mouse leaves window
             document.addEventListener('mouseleave', () => {
                 this.customCursor.style.opacity = '0';
             });
@@ -922,7 +882,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== ANALYTICS MANAGER =====
     class AnalyticsManager {
         constructor() {
             this.events = [];
@@ -947,7 +906,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         trackInteractions() {
-            // Track clicks on important elements
             document.addEventListener('click', (e) => {
                 const target = e.target;
                 const interactiveElements = ['A', 'BUTTON', 'INPUT'];
@@ -963,7 +921,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Track form interactions
             document.addEventListener('submit', (e) => {
                 this.logEvent('form_submit', {
                     formId: e.target.id,
@@ -973,7 +930,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         trackPerformance() {
-            // Track page load performance
             window.addEventListener('load', () => {
                 if (performance.timing) {
                     const timing = performance.timing;
@@ -998,17 +954,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             this.events.push(event);
             
-            // In a real application, send to analytics service
             console.log('Analytics Event:', event);
             
-            // Keep only last 100 events in memory
             if (this.events.length > 100) {
                 this.events = this.events.slice(-100);
             }
         }
     }
     
-    // ===== INITIALIZATION =====
     class PortfolioApp {
         constructor() {
             this.modules = {};
@@ -1018,10 +971,8 @@ document.addEventListener('DOMContentLoaded', function() {
         init() {
             console.log('🚀 Portfolio App Initializing...');
             
-            // Remove no-js class
             document.documentElement.classList.remove('no-js');
             
-            // Initialize modules
             this.modules.theme = new ThemeManager();
             this.modules.navigation = new NavigationManager();
             this.modules.animations = new AnimationManager();
@@ -1031,10 +982,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.modules.ui = new UIEnhancements();
             this.modules.analytics = new AnalyticsManager();
             
-            // Add keyboard shortcuts
             this.initKeyboardShortcuts();
             
-            // Initialize error handling
             this.initErrorHandling();
             
             console.log('✅ Portfolio App Initialized!');
@@ -1042,21 +991,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         initKeyboardShortcuts() {
             document.addEventListener('keydown', (e) => {
-                // Ctrl/Cmd + K to focus search (if implemented)
                 if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                     e.preventDefault();
                     const searchInput = document.querySelector('input[type="search"]');
                     if (searchInput) searchInput.focus();
                 }
                 
-                // Escape to close modals/menus
                 if (e.key === 'Escape') {
                     if (this.modules.navigation) {
                         this.modules.navigation.closeMenu();
                     }
                 }
                 
-                // T for theme toggle (Alt+T)
                 if (e.key === 't' && e.altKey) {
                     e.preventDefault();
                     if (this.modules.theme) {
@@ -1067,20 +1013,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         initErrorHandling() {
-            // Global error handler
             window.addEventListener('error', (e) => {
                 console.error('Global error:', e.error);
-                // In production, send to error tracking service
             });
             
-            // Unhandled promise rejection
             window.addEventListener('unhandledrejection', (e) => {
                 console.error('Unhandled promise rejection:', e.reason);
             });
         }
     }
     
-    // ===== START THE APP =====
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
             window.PortfolioApp = new PortfolioApp();
@@ -1089,10 +1031,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.PortfolioApp = new PortfolioApp();
     }
     
-    // ===== GLOBAL EXPORTS =====
     window.portfolioUtils = Utils;
     
-    // Performance monitoring (LCP, FID)
     if ('PerformanceObserver' in window) {
         try {
             const perfObserver = new PerformanceObserver((list) => {
@@ -1113,9 +1053,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ===== AMÉLIORATIONS SUPPLÉMENTAIRES =====
-
-// Gestionnaire de chargement des images
 class ImageManager {
     constructor() {
         this.initLazyLoading();
@@ -1131,7 +1068,6 @@ class ImageManager {
                     img.src = img.dataset.src;
                     img.classList.add('loaded');
                     
-                    // Gestion des erreurs de chargement
                     img.onerror = () => {
                         img.src = 'img/fallback.jpg';
                         console.warn(`Image failed to load: ${img.dataset.src}`);
@@ -1148,7 +1084,6 @@ class ImageManager {
     }
 }
 
-// Gestionnaire de formulaire newsletter
 class NewsletterManager {
     constructor() {
         this.form = document.querySelector('.newsletter-form');
@@ -1174,7 +1109,6 @@ class NewsletterManager {
         button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         
         try {
-            // Simulation d'envoi
             await new Promise(resolve => setTimeout(resolve, 1000));
             
             this.showMessage('Merci pour votre inscription !', 'success');
@@ -1192,7 +1126,6 @@ class NewsletterManager {
     }
     
     showMessage(message, type) {
-        // Utiliser le système de notification existant
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
@@ -1215,7 +1148,6 @@ class NewsletterManager {
     }
 }
 
-// Analytics personnalisé (version légère)
 class SimpleAnalytics {
     constructor() {
         this.init();
@@ -1235,7 +1167,6 @@ class SimpleAnalytics {
             timestamp: new Date().toISOString()
         };
         
-        // Envoyer à votre backend ou Google Analytics
         console.log('Page view:', data);
     }
     
@@ -1255,7 +1186,7 @@ class SimpleAnalytics {
         let timeSpent = 0;
         const interval = setInterval(() => {
             timeSpent += 30;
-            if (timeSpent >= 300) { // 5 minutes
+            if (timeSpent >= 300) { 
                 clearInterval(interval);
                 console.log('Time on page:', timeSpent, 'seconds');
             }
@@ -1263,7 +1194,6 @@ class SimpleAnalytics {
     }
 }
 
-// Initialiser les améliorations
 class PortfolioEnhancements {
     constructor() {
         this.imageManager = new ImageManager();
@@ -1300,7 +1230,6 @@ class PortfolioEnhancements {
     }
 }
 
-// Lancer les améliorations après le chargement
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         window.portfolioEnhancements = new PortfolioEnhancements();
@@ -1309,7 +1238,6 @@ if (document.readyState === 'loading') {
     window.portfolioEnhancements = new PortfolioEnhancements();
 }
 
-// ===== CONFIGURATION SUPPLÉMENTAIRE =====
 const ANIMATION_CONFIG = {
     particles: {
         enabled: true,
@@ -1327,7 +1255,6 @@ const ANIMATION_CONFIG = {
     }
 };
 
-// ===== PARTICLES BACKGROUND (NOUVEAU) =====
 class ParticlesBackground {
     constructor() {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1398,7 +1325,6 @@ class ParticlesBackground {
             if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
             if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
             
-            // Interaction avec la souris
             const dx = this.mouse.x - p.x;
             const dy = this.mouse.y - p.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
@@ -1409,8 +1335,7 @@ class ParticlesBackground {
                 p.x -= Math.cos(angle) * force * 2;
                 p.y -= Math.sin(angle) * force * 2;
             }
-            
-            // Dessin
+
             this.ctx.beginPath();
             this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             this.ctx.fillStyle = p.color;
@@ -1422,7 +1347,6 @@ class ParticlesBackground {
     }
 }
 
-// ===== CURSOR FOLLOWER AVEC HABE MIhena =====
 class CursorFollower {
     constructor() {
         if (window.matchMedia('(pointer: coarse)').matches) return;
@@ -1518,7 +1442,6 @@ class CursorFollower {
             });
         });
         
-        // Effet magnétique
         if (ANIMATION_CONFIG.cursor.magnetic) {
             document.querySelectorAll('.btn, .social-link').forEach(btn => {
                 btn.addEventListener('mousemove', (e) => {
@@ -1558,7 +1481,6 @@ class CursorFollower {
     }
 }
 
-// ===== SCROLL REVEAL AMÉLIORÉ (NOUVEAU) =====
 class ScrollRevealEnhanced {
     constructor() {
         this.elements = [];
@@ -1614,7 +1536,6 @@ class ScrollRevealEnhanced {
     }
 }
 
-// ===== PARALLAX SIMPLE (NOUVEAU) =====
 class ParallaxSimple {
     constructor() {
         if (!ANIMATION_CONFIG.parallax.enabled) return;
@@ -1636,7 +1557,6 @@ class ParallaxSimple {
     }
 }
 
-// ===== COUNTER ANIMATION (NOUVEAU) =====
 class CounterAnimation {
     constructor() {
         this.counters = document.querySelectorAll('.stat-number');
@@ -1684,7 +1604,6 @@ class CounterAnimation {
     }
 }
 
-// ===== TYPING EFFECT (NOUVEAU) =====
 class TypingEffect {
     constructor() {
         this.element = document.querySelector('.hero-title .title-highlight');
@@ -1710,7 +1629,6 @@ class TypingEffect {
     }
 }
 
-// ===== RIPPLE EFFECT (NOUVEAU) =====
 class RippleEffect {
     constructor() {
         this.init();
@@ -1744,7 +1662,6 @@ class RippleEffect {
             });
         });
         
-        // Ajouter l'animation si elle n'existe pas
         if (!document.querySelector('#ripple-style')) {
             const style = document.createElement('style');
             style.id = 'ripple-style';
@@ -1761,10 +1678,8 @@ class RippleEffect {
     }
 }
 
-// ===== INITIALISER TOUS LES NOUVEAUX MODULES =====
 class EnhancedAnimations {
     constructor() {
-        // Attendre que le DOM soit chargé
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init());
         } else {
@@ -1775,7 +1690,6 @@ class EnhancedAnimations {
     init() {
         console.log('🎨 Animations avancées initialisées');
         
-        // Initialiser chaque module individuellement
         try { new ParticlesBackground(); } catch (e) { console.warn('Particles non chargé', e); }
         try { new CursorFollower(); } catch (e) { console.warn('Cursor non chargé', e); }
         try { new ScrollRevealEnhanced(); } catch (e) { console.warn('ScrollReveal non chargé', e); }
@@ -1786,7 +1700,6 @@ class EnhancedAnimations {
     }
 }
 
-// ===== LANCER LES ANIMATIONS =====
 if (!window.enhancedAnimationsInitialized) {
     window.enhancedAnimationsInitialized = true;
     new EnhancedAnimations();
