@@ -823,6 +823,7 @@ a:hover {
 .languages-interests {
     padding: var(--space-3xl) 0;
     background: var(--bg-secondary);
+    overflow: hidden;
 }
 
 .languages-interests .section-header {
@@ -867,9 +868,16 @@ a:hover {
 
 .language-flag img {
     width: 85px;
-    border: 1px solid #60fad9;
-    border-radius: 5px;
+    height: auto;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
 }
+
+.language-card:hover .language-flag img {
+    border-color: var(--primary);
+}
+
 
 .language-name {
     font-size: 1.3rem;
@@ -877,6 +885,14 @@ a:hover {
     margin-bottom: var(--space-xs);
     color: var(--text-primary);
 }
+
+.language-name,
+.interest-card span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
 
 .language-level {
     display: inline-block;
@@ -900,22 +916,6 @@ a:hover {
 
 .language-progress {
     margin-top: var(--space-lg);
-}
-
-.language-progress .progress-bar {
-    height: 6px;
-    background: var(--bg-tertiary);
-    border-radius: var(--radius-full);
-    overflow: hidden;
-    margin-top: var(--space-sm);
-}
-
-.language-progress .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: var(--radius-full);
-    width: 0;
-    transition: width 1s ease-out;
 }
 
 .interests-grid {
@@ -956,6 +956,230 @@ a:hover {
     font-weight: 600;
     color: var(--text-primary);
 }
+
+@media screen and (max-width: 1024px) {
+    .languages-grid {
+        gap: var(--space-lg);
+    }
+    
+    .language-card {
+        padding: var(--space-lg);
+    }
+    
+    .language-flag img {
+        width: 70px;
+    }
+    
+    .interests-grid {
+        gap: var(--space-lg);
+    }
+    
+    .interest-card {
+        padding: var(--space-lg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+    
+    .language-card {
+        padding: var(--space-md);
+    }
+    
+    .language-flag img {
+        width: 60px;
+    }
+    
+    .language-name {
+        font-size: 1.1rem;
+    }
+    
+    .language-level {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.8rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+    
+    .interest-card {
+        padding: var(--space-md);
+    }
+    
+    .interest-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .interest-card span {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .languages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .language-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-md);
+    }
+    
+    .language-flag img {
+        width: 80px;
+    }
+    
+    .language-name {
+        font-size: 1.2rem;
+    }
+    
+    .language-level {
+        font-size: 0.9rem;
+        padding: 0.25rem 1rem;
+    }
+    
+    .language-progress {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .interest-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+        padding: var(--space-md);
+        text-align: left;
+    }
+    
+    .interest-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin: 0;
+    }
+    
+    .interest-card span {
+        font-size: 1rem;
+    }
+    .section-header {
+        padding: 0 var(--space-md);
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .language-flag img {
+        width: 60px;
+    }
+    
+    .language-name {
+        font-size: 1rem;
+    }
+    
+    .language-level {
+        font-size: 0.8rem;
+    }
+    
+    .interest-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .interest-card span {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .languages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .language-card {
+        padding: var(--space-sm);
+    }
+    
+    .interest-card {
+        padding: var(--space-sm);
+    }
+}
+
+.language-card,
+.interest-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.language-card:hover,
+.interest-card:hover {
+    transform: translateY(-5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .language-card,
+    .interest-card,
+    .language-card:hover,
+    .interest-card:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-card,
+.interest-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.language-card:nth-child(1) { animation-delay: 0.1s; }
+.language-card:nth-child(2) { animation-delay: 0.2s; }
+.language-card:nth-child(3) { animation-delay: 0.3s; }
+
+.interest-card:nth-child(1) { animation-delay: 0.2s; }
+.interest-card:nth-child(2) { animation-delay: 0.3s; }
+.interest-card:nth-child(3) { animation-delay: 0.4s; }
+.interest-card:nth-child(4) { animation-delay: 0.5s; }
+
+
 
 .project-filters {
     display: flex;
